@@ -1,0 +1,26 @@
+
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view class="daohang" slot="backText">参加任务人员</view>	
+</cu-custom>
+<view>
+  <block wx:for="{{personList}}">
+    <view class="toplist">
+    <image class="imgClass" src="{{item.userInfo.headimgUrl}}"></image>
+    <view class="rightview">
+      <view class="topView">
+        <view class="name">{{item.userInfo.realName?item.userInfo.realName:item.userInfo.nickName?item.userInfo.nickName:"匿名用户"}}</view>
+        <view class="phone">{{item.userInfo.phone}}</view>  
+      </view>
+      <view class="buttomView">
+        <view class="createTime">{{item.createTime}}</view>
+        <view class="attendFlag {{item.attendFlag=='0'?'bg-green':'bg-red'}}">{{item.attendFlag=="0"?"已报名":"已取消"}}</view>
+      </view>
+     
+    </view>
+    <view>
+      <image class="imgPhoneClass" src="../../../static/img/iphone_icon.png" bindtap="callPhone" data-phone="{{item.userInfo.phone}}"></image>
+    </view>
+  </view>
+  </block>
+ 
+</view>

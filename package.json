@@ -1,0 +1,14 @@
+{
+  "name": "volunteer-ma",
+  "version": "1.0.0",
+  "description": "1. 本软件为 www.aiforest.net 开发研制，未经购买不得使用 1. 购买后可获得全部源代码（禁止转卖、分享、上传到码云、github等开源平台） 1. 一经发现盗用、分享等行为，将追究法律责任，后果自负",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wechat-miniprogram-rate": "^1.0.0"
+  }
+}

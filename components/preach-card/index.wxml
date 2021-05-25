@@ -1,0 +1,8 @@
+<!--components/preach-card/index.wxml-->
+<view>
+  <view class="flex">
+    <image src="img"></image>
+    <view></view>
+  </view>
+  <view></view>
+</view>

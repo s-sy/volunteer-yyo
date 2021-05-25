@@ -1,0 +1,41 @@
+<!--components/my-task/index.wxml-->
+<view class="chuangwen">
+  <view class="oneline">
+    <view class="flex">
+      <view class="title">{{taskData.topic}}</view>
+    <view class="title-top">{{taskTypeList[taskData.taskType]}}</view>
+    </view>
+   
+    <view class="title-fen">{{taskData.pointReward}}分/人</view>
+  </view>
+  <view class="twoline" style="margin-top:15rpx">
+      <view>要求人数：</view>
+      <view>{{taskData.numberNeeded}}人</view>
+  </view>
+  <view class="twoline" style="margin-top:10rpx">
+    <view>开始时间：</view>
+    <view>{{startTime}}</view>
+  </view>
+  <view class="twoline" style="margin-top:10rpx">
+    <view>结束时间：</view>
+    <view>{{endTime}}</view>
+  </view>
+  <view class="twoline" style="margin-top:10rpx">
+    <view>任务地点：</view>
+    <view>{{taskData.address}}</view>
+  </view>
+
+  <view class="felxline" style="margin-top:20rpx">
+    <view class="felx-left">
+    <!-- <image class="chuangwen-img" src="/static/img/xiaohuang.jpg"></image> -->
+  
+    <view>{{taskData.contacts}}/{{taskData.phone}}</view>
+    </view>
+    <view  class="flex-xq" style="background: linear-gradient(-90deg, #FA3737 0%, #FF8A8B 100%);" bindtap="jumpRejDetail" data-data="{{taskData}}" >查看参加人员</view>
+   
+   
+
+   
+  </view>
+</view>
+

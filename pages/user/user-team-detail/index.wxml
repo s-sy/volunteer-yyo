@@ -1,0 +1,50 @@
+<!--pages/user/user-team-detail/index.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view class="daohang" slot="backText">创建队伍</view>	
+</cu-custom>
+<view class="padding-lr-lg margin-top-lg">
+<view class="flex justify-between">
+  <view  class="itemrow">
+    <view class="itemName">公司名称: </view>
+    <view class="itemContext" style="width:420rpx">{{obj.name}}</view>
+  </view>
+  <view class="check">{{obj.auditStatus=="0"?"审核中":obj.auditStatus=="1"?"已过审":"未通过"}}</view>
+</view>
+<view class="itemrow">
+   <view class="itemName">团体类型:</view>
+   <view class="itemContext" style="width:500rpx;">{{obj.classification=='1'?'单位/企业':'民间团体'}}</view>
+ </view>
+ <view class="itemrow">
+   <view class="itemName">公司地址:</view>
+   <view class="itemContext" style="width:500rpx;">{{obj.address}}</view>
+ </view>
+ <view  class="itemrow">
+   <view class="itemName">负责人名:</view>
+   <view class="itemContext">{{obj.principal}}</view>
+ </view>
+ 
+ <view  class="itemrow">
+   <view class="itemName">联系电话:</view>
+   <view class="itemContext">{{obj.phone}}</view>
+ </view>
+ <view  class="itemrow">
+   <view class="itemName">队伍人数:</view>
+   <view class="itemContext">{{obj.teamNumber}}</view>
+ </view>
+ <view  class="itemrow">
+   <view class="itemName">简介：</view>
+   <view class="itemContextss">{{obj.introduction}}</view>
+ </view>
+
+ <view class="itemName" wx:if="{{obj.businessLicense}}">营业执照: </view>
+ <view wx:if="{{obj.businessLicense}}">
+  <image class="image" src="{{obj.businessLicense}}" ></image>
+ </view>
+ <view class="itemName" wx:if="{{obj.picUrls.length!=0}}">组织图片: </view>
+ <view class="imageList" wx:if="{{obj.picUrls.length!=0}}">
+   <block wx:for="{{obj.picUrls}}" wx:key="index">
+    <image class="image" src="{{item}}" ></image>
+   </block>
+ 
+ </view>
+</view>

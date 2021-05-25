@@ -1,0 +1,98 @@
+/* pages/registration/index.wxss */
+.UCenter-bg {
+  background-image: url(https://img.tmyomi.com/1/material/f65b007c-cde8-4437-9282-03880dc73752.png);
+  background-size: cover;
+  background-position: center center;
+  width: auto;
+  height: 330rpx;
+  display: flex;
+  justify-content: center;
+  padding-top: 40rpx;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-weight: 300;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+page{
+  background: #FFFFFF;
+}
+.regbody{
+  padding:50rpx 30rpx 0rpx 30rpx;
+  margin-top:-25rpx;
+  position: relative;
+  z-index: 9;
+  border-radius: 36rpx 36rpx 0rpx 0rpx;
+  background: #FFFFFF;
+}
+.titlefen{
+  
+
+  font-size: 48rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FD6640;
+}
+.tag-type{
+  
+height: 31rpx;
+background: #FFE8DE;
+border-radius: 2rpx;
+
+font-size: 22rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #FF6C4C;
+text-align: center;
+margin-left:20rpx;
+padding:0rpx 10rpx;
+}
+.bigtext{
+  
+font-size: 36rpx;
+font-family: PingFang SC;
+font-weight: 800;
+color: #333333;
+}
+.litletext{
+  
+font-size: 28rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #666666;
+
+line-height: 48rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.foot-nuber{
+  font-size: 48rpx;
+  font-family: PingFang SC;
+font-weight: bold;
+color: #DD0105;
+}
+.footy{
+  margin:0rpx 30rpx;
+font-size: 32rpx;
+font-family: PingFang SC;
+font-weight: bold;
+color: #333333;
+}

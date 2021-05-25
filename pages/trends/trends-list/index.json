@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "trends":"/components/trends/index"
+  }
+}

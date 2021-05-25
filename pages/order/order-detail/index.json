@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "order-operate": "/components/order-operate/index",
+    "count-down": "/components/count-down/index",
+    "poster": "/components/wxa-plugin-canvas/poster/index"
+  }
+}

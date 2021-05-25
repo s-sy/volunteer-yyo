@@ -1,0 +1,89 @@
+<!--
+  - Copyright (C) 2018-2019
+  - All rights reserved, Designed By www.aiforest.net
+  - 注意：
+  - 本软件为www.aiforest.net开发研制，未经购买不得使用
+  - 购买后可获得全部源代码（禁止转卖、分享、上传到码云、github等开源平台）
+  - 一经发现盗用、分享等行为，将追究法律责任，后果自负
+-->
+<wxs module="numberUtil" src="../../utils/numberUtil.wxs"></wxs>
+<cu-custom bgColor="bg-gradual-orange" isBack="{{false}}">
+  <view slot="backText">返回</view>
+  <view slot="content">注册提货点</view>
+</cu-custom>
+<form>
+	<view class="cu-form-group ">
+		<view class="title">联系人</view>
+		<input placeholder="输入联系人名称" value="{{name}}" bindinput="getname"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">联系电话</view>
+		<input placeholder="输入联系人的电话" value="{{telNum}}" bindinput="gettelNum"></input>
+		<view class="cu-capsule radius">
+			<view class="cu-tag bg-blue">
+				+86
+			</view>
+			<view class="cu-tag line-blue">
+				中国大陆
+			</view>
+		</view>
+	</view>
+  <view  class="cu-form-group">
+		<view class="title">经纬度</view>
+    <view>{{locationName}}</view>
+    <button wx:if="{{isAuthLocation}}" class="button" bindtap="getcola"> <text class="cuIcon-locationfill text-orange"></text></button>
+    <button wx:else class="button" open-type="openSetting" bindopensetting="bindopensetting"> <text class="cuIcon-locationfill text-orange"></text></button>
+  </view>
+ 
+  <view class="cu-form-group">
+		<view class="title">详细地址</view>
+		<input placeholder="输入详细地址" value="{{detailInfo}}"  bindinput="getdetailInfo"></input>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">市/区名</view>
+		<input placeholder="示范：天门市" value="{{districtName}}" bindinput="getdistrictName"></input>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">乡/镇名</view>
+		<input placeholder="示范：竟陵镇(办事处)" value="{{townName}}" bindinput="gettownName"></input>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">村/组名</view>
+		<input placeholder="示范：西湖村" value="{{villageName}}" bindinput="getvillageName"></input>
+	</view>
+  <view class="cu-form-group">
+    <view class="title">门店图片</view>
+    <view class="flex" wx:if="{{dorpImg.length>0}}">
+      <image class="imgClass"  src="{{dorpImg[0]}}" />
+      <view class="outImage" bindtap="deleteTeamImg">X</view>
+    </view>
+    <image class="imgClass" wx:if="{{dorpImg.length==0}}" bindtap="upLoadImg" src="../../static/img/selectPhoto_add.png" />
+	</view>
+</form>
+<view class="padding flex flex-direction">
+  <button wx:if="{{isReg}}" class="cu-btn bg-red margin-tb-sm lg" bindtap="submitModal" data-target="DialogModal1">提交信息</button>
+  <button wx:if="{{!isReg}}" class="cu-btn bg-red margin-tb-sm lg" bindtap="upadtesubmitModal" data-target="DialogModal1">提交信息</button>
+</view>
+
+<view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">{{modalTitle}}</view>
+      <!-- <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view> -->
+    </view>
+    <view class="padding-xl">
+      <!-- 您的信息已经提交成功，请耐心等候审核通知。 -->
+      {{modalContent}}
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <!-- <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button> -->
+        <!-- <button class="cu-btn bg-green margin-left" bindtap="hideModal">返回首页</button> -->
+        <navigator url="/pages/home/index"  open-type="switchTab" hover-class="navigator-hover">返回首页</navigator>
+      </view>
+    </view>
+  </view>
+</view>
+

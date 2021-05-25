@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "preach-list-form":"../../../components/preach-list-form/index",
+    "rate": "wechat-miniprogram-rate"
+  }
+}

@@ -1,0 +1,16 @@
+/* components/preach-list-form/index.wxss */
+.jianjie{
+  position: absolute;
+}
+.jianjie-text{
+  text-indent:140rpx;
+}
+
+.line{
+    display: flex;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #999999;
+    margin-top:15rpx;
+}

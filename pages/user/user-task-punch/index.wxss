@@ -1,0 +1,7 @@
+/* pages/user/user-task-punch/index.wxss */
+page{
+  background: #FFFFFF;
+}
+.showdown{
+box-shadow: 0rpx 0rpx 22rpx 5rpx rgba(198, 198, 198, 0.2);
+}

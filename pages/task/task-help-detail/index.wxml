@@ -1,0 +1,38 @@
+<!--pages/task/task-help-detail/index.wxml-->
+<!--pages/user/user-team-detail/index.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view class="daohang" slot="backText">寻求帮助</view>	
+</cu-custom>
+<view class="padding-lr-lg margin-top-lg">
+<view class="flex justify-between">
+  <view  class="itemrow">
+    <view class="itemName">帮助主题: </view>
+    <view class="itemContext" style="width:420rpx">{{obj.subject}}</view>
+  </view>
+  <view class="check">{{obj.auditStatus=='0'?'审核中':obj.auditStatus=='1'?'已过审':'未通过'}}</view>
+</view>
+ <view class="itemrow">
+   <view class="itemName">地址信息:</view>
+   <view class="itemContext" style="width:500rpx;">{{obj.address}}</view>
+ </view>
+ <view  class="itemrow">
+   <view class="itemName">联系人:</view>
+   <view class="itemContext">{{obj.contacts}}</view>
+ </view>
+
+ <view  class="itemrow">
+   <view class="itemName">联系电话:</view>
+   <view class="itemContext">{{obj.phone}}</view>
+ </view>
+ <view  class="itemrow">
+   <view class="itemName">详细情况说明:</view>
+   <view class="detailContext" style="width:450rpx;">{{obj.details}}</view>
+ </view>
+ <!-- <view class="itemName">上传的图片: </view> -->
+ <!-- <view class="imageList">
+   <block wx:for="{{3}}" wx:key="index">
+    <image class="image" src="../../../static/img/selectPhoto_add.png" ></image>
+   </block>
+  <image class="image" src="../../../static/img/selectPhoto_add.png" ></image>
+ </view> -->
+</view>

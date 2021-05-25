@@ -1,0 +1,119 @@
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='cuIcon-back'></text> 返回
+    </navigator>
+   
+  </view>
+</view>
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <!-- <image src="/static/img/user_task@2x.png" class="png" mode="widthFix"></image> -->
+    <!-- <view class="text-xl">ColorUI组件库
+      <text class="text-df">v2.0</text>
+    </view> -->
+    <view class="text-xl text-hold text-white">天门市新时代文明实践中心服务平台</view>
+    <view class="text-xl text-hold text-white">{{obj.classifieds}}</view>
+    <view class="text-xl text-hold text-white">{{pageCur=="order"?"邀请":"服务评论"}}</view>
+  </view>
+  <view class="bg-white  preach-list-view padding-lg"> 
+      <view class="detail-top-text">【{{obj.civilizationTitle}}】</view>
+      <preach-list-form itemObj="{{obj}}"></preach-list-form>
+      <view class="detail-xian" ></view>
+      <view wx:if="{{pageCur=='order'}}">
+        <!-- <view class="flex padding-tb-sm align-center">
+          <view class="text-black ">单位：</view>
+          <input class="deatil-input" style="width:500rpx; " bindinput="bindUnitInput" placeholder="单位名称"/>
+        </view> -->
+        <form>
+        <view class="cu-form-group">
+		<view class="title">单位</view>
+		<input placeholder="单位名称" bindinput="bindUnitInput"></input>
+  </view>
+ 
+        <view class="cu-form-group">
+		<view class="title">送单日期：</view>
+		<picker mode="date" value="{{date}}" start="2020-12-20" end="2070-12-20" bindchange="DateChange">
+			<view class="picker">
+				{{date}}
+			</view>
+		</picker>
+  </view>
+  
+  <view class="cu-form-group">
+		<view class="title">联系人</view>
+		<input placeholder="联系人" bindinput="contactInput"></input>
+	</view>
+        <!-- <view class="flex padding-tb-xs align-center">
+          <view class="text-black ">联系人：</view>
+          <input class="deatil-input" bindinput="contactInput" placeholder="联系人"/>
+        </view> -->
+        <view class="cu-form-group">
+		<view class="title">联系方式</view>
+		<input placeholder="联系方式" bindinput="phoneInput"></input>
+	</view>
+        <!-- <view class="flex padding-tb-xs align-center">
+          <view class="text-black ">联系方式：</view>
+          <input class="deatil-input" bindinput="phoneInput" placeholder="联系方式"/>
+        </view> -->
+        <view class="cu-form-group">
+		<view class="title">送单地址</view>
+		<input placeholder="送单地址" bindinput="textareaBInput"></input>
+  </view>
+</form>
+        <!-- <view class="flex padding-tb-xs ">
+          <view class="text-black">送单地址：</view>
+          <textarea class="deatil-textare" maxlength="-1"  bindinput="textareaBInput" placeholder="填写送单地址"></textarea>
+        </view> -->
+        <view class="padding flex flex-direction">
+            <button class="cu-btn bg-green lg" bindtap="sendOrder">申请</button>
+  
+        </view>
+      </view>
+   <view wx:if="{{pageCur=='comment'}}" class="padding-top-sm">
+    <!-- <view class="flex  align-center">
+          <view class="text-black ">姓名：</view>
+          <input class="deatil-input"  bindinput="bindNameInput" placeholder="请填写真实姓名"/>
+        </view> -->
+        <form>
+          <view class="cu-form-group margin-bottom-lg">
+    <view class="title">满意度</view>
+   
+		<rate class="reate" value="{{rate}}" placeholder="{{5}}" allowHalf="{{false}}" bindchange="getRate"></rate>
+  
+  </view>
+        <view class="cu-form-group">
+		<view class="title">姓名</view>
+		<input placeholder="请填写真实姓名" bindinput="bindNameInput"></input>
+  </view>
+  
+    <!-- <view class="flex align-center padding-tb-sm">
+    <view class="text-black ">满意度：</view>
+      <rate value="{{rate}}" placeholder="{{5}}" allowHalf="{{false}}" bindchange="getRate"></rate>
+    </view> -->
+
+
+    <view class="cu-form-group align-start">
+		<view class="title">评价内容</view>
+		<textarea maxlength="-1"  bindinput="textareaCInput" placeholder="评价内容"></textarea>
+	</view>
+    <!-- <view class="flex">
+      <view class="text-black ">评价内容：</view>
+      <textarea class="deatil-textare" maxlength="-1"  bindinput="textareaCInput" placeholder="评价内容"></textarea>
+    </view> -->
+    <view class="padding flex flex-direction">
+            <button class="cu-btn bg-green lg" bindtap="sendComment">提交评论</button>
+        </view>
+      </form>
+  </view>
+  </view>
+  
+</scroll-view>
+<view class="cu-modal {{modalName == 'Modal' ? 'show' : ''}}" bindtap="hideModal">
+			<view class="cu-dialog">
+				<view class="modal-m">
+					<image class="modal-img" src="https://img.0728jh.com/staticImg/shibai_icon.png"></image>
+					<view class="modal-text">请填写正确信息哦</view>
+				</view>
+			</view>
+		</view>

@@ -1,0 +1,76 @@
+/* pages/user/user-mytask-jion/index.wxss */
+.daohang{
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;}
+  .imgClass{
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 50%;
+  }
+  .toplist{
+    display: flex;
+    padding:20rpx;
+    margin: 20rpx;
+    background: #FFFFFF;
+    border-radius: 10rpx;
+    box-shadow: #EEEEEE 0rpx 0rpx 5rpx 10rpx;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+  }
+  .rightview{
+    padding-left: 20rpx;
+    
+    width:480rpx;
+  }
+  .topView{
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+  .buttomView{
+    margin-top:10rpx;
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+  .name{
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #333333;
+    margin-right: 13rpx;
+    max-width: 250rpx;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+  
+  }
+  .phone{
+    display: flex;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #999999;
+  }
+  .createTime{
+    display: flex;
+    font-size: 20rpx;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #999999;
+  }
+  .attendFlag{
+    margin-left: 30rpx;
+    font-size: 20rpx;
+    padding: 0rpx 10rpx; 
+    color:#ffffff;
+    border-radius: 10rpx;
+  }
+  .imgPhoneClass{
+    height: 80rpx;
+    width: 80rpx;
+  }

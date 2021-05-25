@@ -1,0 +1,84 @@
+/* components/page/basics/home.wxss */
+page{
+  background: #FFFF;
+}
+.swiper-item-img{
+ 
+  width:750rpx;
+  height: 200rpx;
+}
+.newtask{
+  margin:20rpx 0rpx;
+}
+.notice{
+  
+  display: flex;
+}
+.notice-img{
+  width:750rpx;
+  height: 250rpx;
+}
+.notic-text{
+  position: absolute;
+  left: 60rpx;
+  /* border: solid 1rpx black; */
+  height:120rpx;
+  width:510rpx;
+  z-index: 9;
+  margin-top:40rpx;
+}
+.notic-tilte{
+display: flex;
+font-size: 32rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #333333;
+}
+.notic-dian{
+ width: 8rpx;
+ height: 8rpx;
+ margin:10rpx 0rpx 0rpx 5rpx;
+background: #FF323C;
+border-radius: 50%;
+}
+.notic-content{
+  margin-top:20rpx;
+font-size: 28rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #999999;
+}
+/* components/tabbar/home.wxss */
+.tabbar{
+  display: flex;
+  justify-content: space-between;
+  background: #fFFFFF;
+  padding:30rpx 
+}
+.tab-kuang{
+  /* border:solid 1rpx #666666; */
+  text-align:center
+}
+.tab-img{
+width: 93rpx;
+height: 93rpx;
+margin: 0 auto;
+background: linear-gradient(-90deg, #FD766C 0%, #FFABA1 100%);
+border-radius: 50%;
+}
+.tab-name{ 
+width:120rpx;
+font-size: 28rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #666666;
+}
+.noticText{
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  
+ 
+  
+}

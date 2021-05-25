@@ -1,0 +1,106 @@
+<!--pages/task/task-help/index.wxml-->
+
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view class="daohang" slot="backText">寻求帮助</view>	
+</cu-custom>
+<scroll-view scroll-y class="scrollPage">
+<view class="teamtitle">
+  <view class="itemKuang" bindtap="changeTab" data-index="0">
+  <view class="teamtitletext {{index==0?'red':'grey'}}">寻求帮助</view>
+  <view class=" {{index==0?'teamxianred':''}}"></view>
+  </view>
+  <view class="itemKuang" bindtap="changeTab" data-index="1">
+  <view class="teamtitletext  {{index==1?'red':'grey'}}">我的记录</view>
+  <view class="{{index==1?'teamxianred':''}}"></view>
+  </view>
+</view>
+  <view wx:if="{{index==0}}">
+    
+    <view class="inputkuang">
+      <view class="inputname">帮助主题</view>
+      <input class="inputcontent" bindinput="inputName" placeholder-class="placeholder" placeholder="请输入需要帮助的主题"/>
+    </view>
+
+    <view class="inputkuang">
+      <view class="inputname">地址信息</view>
+      <input class="inputcontent" bindinput="inputAddress" placeholder-class="placeholder" placeholder="请输入您的地址信息"/>
+    </view>
+
+    <view class="inputkuang">
+      <view class="inputname">联系人</view>
+      <input class="inputcontent" bindinput="inputLegal" placeholder-class="placeholder" placeholder="请输入您的姓名"/>
+    </view>
+
+   
+    <view class="inputkuang">
+      <view class="inputname">联系电话</view>
+      <input class="inputcontent" bindinput="inputPhone" type="number" placeholder-class="placeholder" placeholder="请输入您的联系电话"/>
+    </view>
+
+    <view class="inputkuang">
+      <view class="inputname">详细情况说明</view>
+      <view class="">
+		<textarea class="texttareacontent"  bindinput="textareaAInput" placeholder-class="placeholder" placeholder="介绍"></textarea>
+	</view>
+    </view>
+
+  
+   <!-- <view class="inputkuang">
+      <view class="inputname">上传图片(最多9张)</view>
+    </view>
+    <view class="imageKuang">
+     <block wx:for="{{helpImgData}}" wx:key="index">
+      <view class="flex margin-bottom-xs">
+        <image class="imgClass" src="{{item}}" mode="aspectFill"></image>
+        <view class="outImage" bindtap="deleteTeamImg" data-index="{{index}}">X</view>
+      </view>
+     </block>
+     
+     <image wx:if="{{helpImgData.length<9}}" class="imgClass" src="../../../static/img/selectPhoto_add.png" bindtap="teamOnLoadImg"></image>
+   </view> -->
+    <button class="button" bindtap="onCommit"> 提交审核</button>
+
+  </view>
+
+
+
+
+
+  <view wx:if="{{index==1}}">
+<block wx:for="{{myHelpList}}" wx:key="index">
+   <view class="itemMy">
+      <view class="one-row">
+        <view class="one-row-one">
+          <view class="two-name">帮助主题: </view>
+          <view class="one-context">{{item.subject}}</view>
+        </view>
+        <view class="check">{{item.auditStatus=='0'?'审核中':item.auditStatus=='1'?'已过审':'未通过'}}</view>
+      </view>
+
+      <view class="tow-row">
+        <view class="two-name">地址信息:</view>
+        <view class="one-contexts" >{{item.address}}</view>
+      </view>
+
+      <view class="three-row">
+        <view class="flex">
+          <view class="two-name">联系人:</view>
+          <view class="three-context">{{item.contacts}}</view>
+        </view>
+        <view class="three-show" bindtap="todetail" data-itemObj="{{item}}">查看详情</view>
+      </view>
+   </view>
+  </block>
+  </view>
+
+
+</scroll-view>
+
+<view class="cu-modal {{modalName == 'Modal' ? 'show' : ''}}" bindtap="hideModal">
+			<view class="cu-dialog">
+				<view class="modal-m">
+					<image class="modal-img" src="https://img.0728jh.com/staticImg/shibai_icon.png"></image>
+					<view class="modal-text">请填写正确信息哦</view>
+				</view>
+			</view>
+		</view>

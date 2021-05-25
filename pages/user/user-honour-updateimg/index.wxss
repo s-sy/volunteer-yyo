@@ -1,0 +1,73 @@
+/* pages/user/user-honour-updateimg/index.wxss */
+.oneRow{
+  display: flex;
+  justify-content: space-between;
+  padding:20rpx 30rpx;
+  justify-items: center;
+}
+.oneRowone{
+  display: flex;
+ 
+}
+.onename{
+  
+font-size: 34rpx;
+font-family: PingFang SC;
+font-weight: 500;
+color: #333333;
+}
+.onecontent{
+  
+font-size: 34rpx;
+
+color: #666666;
+}
+.shenhe{
+
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #F28F07;
+}
+.towRow{
+  display: flex;
+  justify-content: space-between;
+  padding:20rpx 30rpx;
+}
+.commit{
+width: 686rpx;
+height: 88rpx;
+
+
+background: linear-gradient(-90deg, #FA3737 0%, #FF8A8B 100%);
+/* opacity: 0.5; */
+border-radius: 44rpx;
+
+font-size: 34rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #FFFFFF;
+text-align: center;
+line-height: 88rpx;
+margin:30rpx ;
+
+}
+page{
+  background: #FFFFFf;
+}
+.inputclass{
+ 
+  width:535rpx;
+  margin-right: 20rpx;
+}
+.sanc{
+  margin-top:5rpx;
+
+}
+.xian{
+  width: 686rpx;
+height: 1rpx;
+background: #ECEBEB;
+border:solid 1rpx #ECEBEB;
+margin:30rpx;
+}

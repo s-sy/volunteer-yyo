@@ -1,0 +1,154 @@
+/* pages/user/user-publish/index.wxss *//* pages/user/user-team/index.wxss */
+page{
+  background: white;
+}
+.daohang{
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;}
+
+.inputkuang{
+  padding:1rpx 30rpx;
+}
+.inputname{
+  
+font-size: 30rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #333333;
+line-height: 100rpx;
+}
+.inputcontent{
+width:690rpx;
+height: 88rpx;
+background: #FAFAFA;
+padding:20rpx;
+}
+.texttareacontent{
+  background: #FAFAFA;
+  width:690rpx;
+  padding:20rpx;
+}
+.placeholder{
+font-size: 26rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #B4B4B4;
+}
+.buttons{
+  width: 702rpx;
+  height: 88rpx;
+  background: linear-gradient(-90deg, #FA3737 0%, #FF8A8B 100%);
+  border-radius: 44rpx;
+
+font-size: 32rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #FFFFFF;
+margin: 50rpx auto 50rpx; 
+}
+.itemMy{
+  margin:20rpx auto;
+  padding: 30rpx 26rpx;
+width: 686rpx;
+height: 250rpx;
+background: #FFFFFF;
+box-shadow: 0rpx 0rpx 20rpx 4rpx rgba(198, 198, 198, 0.11);
+}
+
+.imageKuang{
+  padding: 0rpx 30rpx 30rpx 30rpx;
+  display: flex;
+  flex-wrap:wrap;
+}
+.imgClass{
+  width: 200rpx;
+  height: 200rpx;
+  background: #F7F7F7;
+  border-radius: 5rpx;
+ }
+ .outImage{
+   border:solid 1rpx;
+   border-radius:50%;
+   opacity: 0.5;
+   width: 30rpx;
+   height: 30rpx;
+   line-height: 30rpx;
+   text-align: center;
+   position: relative;
+   right: 35rpx;
+   top:5rpx;
+   
+ }
+
+ .modal-m {
+	width: 330rpx;
+	height: 240rpx;
+	background: rgba(0, 0, 0, 1);
+	opacity: 0.7;
+}
+.modal-text {
+	font-size: 26rpx;
+	font-family: PingFang SC;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+}
+.modal-img {
+	height: 104rpx;
+	width: 104rpx;
+	margin-top: 35rpx;
+	margin-bottom: 31rpx;
+}
+.cu-dialog{
+  position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: auto;
+	margin-right: auto;
+	width: 680rpx;
+	max-width: 330rpx;
+	background-color: #f8f8f8;
+	border-radius: 10rpx;
+	overflow: hidden;
+}
+
+.cfttext{
+  margin:5rpx 50rpx 0rpx 20rpx;
+  font-size: 32rpx;
+}
+.cu-form-groupsdf{
+	background-color: var(--white);
+	padding: 1rpx 30rpx;
+	display: flex;
+	align-items: center;
+	min-height: 100rpx;
+	justify-content: space-between;
+}
+.cu-form-groupss {
+	background-color: var(--white);
+	padding: 1rpx 30rpx;
+	display: flex;
+	align-items: center;
+	min-height: 100rpx;
+	justify-content: space-between;
+}
+.cu-form-groupss .title {
+	text-align: justify;
+	padding-right: 30rpx;
+	font-size: 30rpx;
+	position: relative;
+	height: 60rpx;
+	line-height: 60rpx;
+}
+.button-fadais{
+
+  background-color: transparent;
+  border: none;	
+}
+.button-fadais::after{
+  border:none;
+}
+page{
+  background: #FFFFFF;
+}

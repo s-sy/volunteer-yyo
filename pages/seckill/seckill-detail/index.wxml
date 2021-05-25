@@ -1,0 +1,119 @@
+<!--
+  - Copyright (C) 2018-2019
+  - All rights reserved, Designed By www.aiforest.net
+  - 注意：
+  - 本软件为www.aiforest.net开发研制，未经购买不得使用
+  - 购买后可获得全部源代码（禁止转卖、分享、上传到码云、github等开源平台）
+  - 一经发现盗用、分享等行为，将追究法律责任，后果自负
+-->
+<view class="cu-card article no-card">
+  <image class="cu-avatar radius seckill-image" src="{{seckillInfo.picUrl}}"></image>
+  <view class="padding bg-red">
+    <view class="action">{{seckillInfo.name}}</view>
+    <view class="flex align-center justify-between margin-top">
+      <view>
+        <view class="text-price text-bold text-xl text-white">{{seckillInfo.seckillPrice}}</view>
+        <view class="text-price text-decorat text-white">{{seckillInfo.goodsSku.salesPrice}}</view>
+      </view>
+      <block wx:if="{{seckillInfo.seckillHall&&outTime>0}}">
+        <view class="cu-item">
+          <view class="text-sm margin-left-xs padding-bottom-xs">距离本场结束还剩：</view>
+          <count-down class="bg-white round padding-xs margin-left-lg text-xs" outTime="{{outTime}}" bind:countDownDone="countDownDone" ></count-down>
+        </view>
+        <view class="text-sm text-white flex align-center" bindtap="shareShow">
+						<view class="cuIcon-share"></view>
+						<text class="margin-left-xs">分享</text>
+					</view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="cu-item bg-white">
+  <view class="content padding">
+    <view class="desc">
+      <view class="text-black overflow-2">{{seckillInfo.goodsSpu.name}}</view>
+      <block wx:if="{{seckillInfo.goodsSku.specs.length>0}}">
+        <view class="text-gray text-sm overflow-1 margin-top-xs">{{specInfo}}</view>
+      </block>
+      <view class="flex justify-between margin-top-sm">
+        <text class="text-sm text-gray">{{"已售"+seckillInfo.seckillNum}}</text>
+        <text class="text-sm text-gray">{{"限量"+seckillInfo.limitNum}}</text>
+        <text data-event-opts="{{[['tap',[['ruleShow',['$event']]]]]}}" class="text-blue text-sm" bindtap="ruleShow">秒杀规则
+        </text>
+      </view>
+      <block wx:if="{{seckillInfo.goodsSpu.freightTemplat.type=='2'}}">
+        <view class="cu-tag bg-red radius sm margin-left">包邮</view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="cu-card no-card margin-top-xs">
+  <view class="cu-item">
+    <view class="cu-bar bg-white">
+      <view class="content">商品信息</view>
+    </view>
+    <view class="bg-white">
+      <template is="wxParse" data="{{wxParseData:description.nodes}}"/>
+    </view>
+    <view class="cu-load bg-gray to-down">已经到底啦...</view>
+  </view>
+</view>
+<!-- html转wxml -->
+<import src="/public/wxParse/wxParse.wxml"/>
+<view class="cu-bar bg-white tabbar border shop foot">
+  <button open-type="contact" bindcontact="handleContact" class="action bg-white">
+    <view class="cuIcon-servicefill"></view> 
+    客服
+  </button>
+  <navigator hover-class='none' url='/pages/goods/goods-detail/index?id={{seckillInfo.goodsSpu.id}}'>
+    <view class="cu-btn bg-orange round shadow-blur">
+      <view class="text-price">{{seckillInfo.goodsSku.salesPrice}}</view>
+      <view>原价购买</view>
+    </view>
+  </navigator>
+  <view data-event-opts="{{[['tap',[['toSeckillBuy',['$event']]]]]}}" bindtap="toSeckillBuy">
+    <view class="{{['cu-btn round shadow-blur margin-right','bg-'+(outTime>0?'red':'gray')+' submit']}}">
+      <view class="text-price">{{seckillInfo.seckillPrice}}</view>
+      <view>{{outTime>0?'立即购买':outTime==0?'即将开始':'已结束'}}</view>
+    </view>
+  </view>
+</view>
+<view class="{{['cu-modal '+modalRule]}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">规则说明</view>
+      <view data-event-opts="{{[['tap',[['ruleHide',['$event']]]]]}}" class="action" bindtap="ruleHide">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl text-left">
+      <text>{{seckillInfo.seckillRule}}</text>
+    </view>
+  </view>
+</view>
+
+<poster id="poster" hide-loading="{{false}}" preload="{{false}}" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail"></poster>
+<view class="cu-modal bottom-modal {{shareShow}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+      <view class="action text-green"></view>
+      <view class="action text-red" bindtap="shareHide">取消</view>
+    </view>
+    <view class="padding flex flex-direction">
+      <button class="cu-btn bg-green lg" open-type='share'>发送给朋友</button>
+      <button class="cu-btn bg-blue margin-tb-sm lg" bindtap="onCreatePoster">生成海报</button>
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{posterShow ? 'show' : ''}}">
+  <view class="cu-dialog">
+    <view style="height: calc(100vh - 200rpx)">
+      <image src="{{posterUrl}}" style="height: 100%;"></image>
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub" bindtap="hidePosterShow">取消</view>
+      <view class="action margin-0 flex-sub solid-left text-red text-bold" bindtap="savePoster">保存到相册</view>
+    </view>
+  </view>
+</view>

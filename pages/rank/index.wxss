@@ -1,0 +1,4 @@
+/* pages/rank/index.wxss */
+page{
+  background: #FFFFFF;
+}

@@ -1,0 +1,24 @@
+
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <!-- <image src="/static/img/user_task@2x.png" class="png" mode="widthFix"></image> -->
+    <!-- <view class="text-xl">ColorUI组件库
+      <text class="text-df">v2.0</text>
+    </view> -->
+    <view class="text-xl text-hold text-white">天门市新时代</view>
+    <view class="text-xl text-hold text-white">文明实践中心服务平台</view>
+  </view>
+  <view class="bg-white  preach-view" >
+   <block wx:for="{{titleData}}" wx:key="index">
+     <view class="item-preach" bindtap="toList" data-text="{{item}}">
+        <view class="item-preach-top" >
+          <image class="item-preach-img" src ="{{imgList[index+1]}}"></image>
+          <view class="item-preach-text">{{item}}</view>
+        </view>
+        <view wx:if="{{index !=titleData.length-1}}" class="preach-xian"></view>
+     </view>
+   </block>
+  </view>
+</scroll-view>
+
+

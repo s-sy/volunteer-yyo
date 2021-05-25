@@ -1,0 +1,83 @@
+/* components/newtask/home.wxss */
+.chuangwen{
+ width: 686rpx; 
+box-shadow: 0px 0px 22px 5px rgba(198, 198, 198, 0.2);
+border-radius: 6px;
+background: #FFFFFF;
+padding: 44rpx 27rpx 52rpx 28rpx;
+margin-left:32rpx;
+}
+.oneline{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  
+}
+.title{
+
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  margin-right: 13rpx;
+}
+.title-top{
+  display: flex;
+  margin-top:-7rpx;
+  padding:0rpx 8rpx;
+  height: 25rpx;
+  
+  background: #FFE8DE;
+  border-radius: 2rpx;
+ 
+font-size: 18rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #FF6C4C;
+line-height: 25rpx;
+}
+.title-fen{
+  
+font-size: 48rpx;
+font-family: PingFang SC;
+font-weight: 500;
+color: #FD6640;
+}
+
+.twoline{  
+  
+
+display: flex;
+font-size: 28rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #999999;
+
+}
+.felxline{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.felx-left{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chuangwen-img{
+  width: 42rpx;
+  height: 42rpx; 
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.flex-xq{
+padding:5rpx 30rpx;
+
+border-radius: 27rpx;
+text-align: center;
+line-height: 54rpx;
+font-size: 24rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #FFFFFF;
+}

@@ -1,0 +1,10 @@
+<!--pages/trends/trends-detail/index.wxml-->
+<!-- <cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">新闻动态详情</view>
+</cu-custom> -->
+<!-- <cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view class="daohang" slot="backText">创建队伍</view>	
+</cu-custom> -->
+  <web-view src="{{newtrend.articleLink}}"></web-view>
+

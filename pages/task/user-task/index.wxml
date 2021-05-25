@@ -1,0 +1,15 @@
+<scroll-view class="bg-white" scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+
+  </view>
+
+<view class="margin-top-lg bg-white">
+  <block wx:for="{{deliveryPoints}}" wx:key="index">
+ <view class="margin-top-sm">
+  <task-list taskType="user" taskData="{{item}}"> </task-list>
+ </view>
+</block>
+
+</view>
+
+</scroll-view>

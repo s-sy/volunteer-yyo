@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "preach-card":"../../../components/preach-card/index"
+  }
+}

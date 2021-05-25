@@ -1,0 +1,46 @@
+<!--components/user/home.wxml-->
+<view class="user">
+  <block wx:for="{{ranking}}" :key="index">
+  <view wx:if="{{rankingType=='index'?index<5:true}}" class="itemuser"  bindtap="todetail" data-item="{{item.id}}">
+  
+    <view class="item-left-top">
+    
+      <view class="item-left">
+         <block wx:if="{{index<3}}">
+            <image class="item-number" wx:if="{{index==0}}" src="/static/img/one@2x.png"></image>
+            <image class="item-number" wx:if="{{index==1}}" src="/static/img/two@2x.png"></image>
+            <image class="item-number" wx:if="{{index==2}}" src="/static/img/three@2x.png"></image>
+         </block>
+         <block wx:selse>
+          <view  class="item-number" wx:if="{{index<10&&index>2}}">{{'0'+(index+1)}}</view>
+          <view  class="item-number" wx:if="{{index>=10}}">{{index+1}}</view>
+         </block>
+         
+     </view>
+
+
+    <view>
+      <image  class="user-img" src="{{item.headimgUrl?item.headimgUrl:'../../static/img/about.png'}}"></image>
+    </view>
+
+
+    <view>
+      <view class="user-name">{{item.nickName?item.nickName:'匿名用户'}}</view>
+       <view class="user-tag">
+          <!-- <view class="tag-one">报名{{item.enlist}}次</view> -->
+          <view class="tag-two">参与活动{{item.doneCount}}次</view>
+       </view>
+    </view>
+
+  </view>
+
+  <view class="user-jif">
+     {{item.pointsTotal}}<text class="user-jifeng">积分</text>
+    </view>
+  </view>
+
+</block>
+</view>
+
+
+

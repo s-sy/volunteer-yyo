@@ -1,0 +1,52 @@
+<swiper class="screen-swiper square-dot" 
+indicator-dots="false" circular="true" autoplay="true" interval="5000" duration="500">
+<swiper-item wx:for="{{swiperData}}" wx:key="index">
+    <!-- <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video> -->
+    <!-- <swiper-item wx:for="{{swiperData}}" wx:key="index" bindtap="jumpPage" data-page="{{item.page}}"></swiper-item> -->
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='1'}}"></image>
+      <video src="{{item.url}}" wx:if="{{item.type=='1'}}" controls></video>
+  </swiper-item>
+</swiper>
+   
+<view class="tabbar">
+  
+  <view class="tab-kuang" wx:for="{{barList}}" wx:key="index" bindtap="todetail" data-data="{{item}}" data-index="{{index}}">
+       <image class="tab-img" src="{{item.url}}"></image>
+       <view class="tab-name">{{item.name}}</view>
+    
+  </view>
+</view>
+<view class="notice">
+  <image class="notice-img" src="/static/img/bg@2x.png"></image>
+  <view class="notic-text">
+    <view class="notic-tilte ">最新公告<view class="notic-dian"> </view></view>
+    <!-- <view class="notic-content">幺米社区(天门市志愿者协会)小程序正...</view> -->
+    <swiper class="swiper_container" autoplay="true" circular="true" interval="6000">
+      <swiper-item wx:for="{{noticeData}}" wx:key="index" bindtap="jumpPage" data-page="{{item.page}}">
+        <view class="text-sm noticText">
+          <!-- <text class="cu-tag round sm bg-red" style="margin-bottom:8rpx">{{item.tag}}</text> -->
+          {{item.content}}<text wx:if="{{item.page}}" class='cuIcon-right'></text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+<title-bar titleData="{{taskTitle}}"></title-bar>
+<block wx:for="{{taskList}}" wx:key="index">
+  <view class="newtask" wx:if="{{index<3}}">
+    <task-list taskType="index" taskData="{{item}}"></task-list>
+  </view>
+ 
+</block>
+<title-bar  titleData="{{newTitle}}"></title-bar>
+<block wx:for="{{newstrends}}" wx:key="index">
+  <view class="newtask" wx:if="{{index<3}}">
+    <trends newstrends="{{item}}" bindtap="torenddetail" data-data="{{item}}"></trends>
+  </view>
+</block>
+<title-bar  titleData="{{paiTitle}}"></title-bar>
+
+
+<ranking rankingType="index" ranking="{{ranking}}"></ranking>
+ <view style="height:80rpx;"></view>

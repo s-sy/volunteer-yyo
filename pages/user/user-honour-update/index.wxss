@@ -1,0 +1,18 @@
+/* pages/user/user-honour-update/index.wxss */
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
+}
+.commit{
+  width: 686rpx;
+  height: 88rpx;
+  background: linear-gradient(-90deg, #FA3737 0%, #FF8A8B 100%);
+  border-radius: 44rpx;
+  
+font-size: 34rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #FFFFFF;
+margin:30rpx 30rpx;
+text-align: center;
+line-height: 88rpx;
+}

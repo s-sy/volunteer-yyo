@@ -1,0 +1,126 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view class="daohang" slot="backText">创建队伍</view>	
+</cu-custom>
+<scroll-view scroll-y class="scrollPage">
+<view class="teamtitle">
+  <view class="itemKuang" bindtap="changeTab" data-index="0">
+  <view class="teamtitletext {{index==0?'red':'grey'}}">志愿者服务队申请表</view>
+  <view class=" {{index==0?'teamxianred':''}}"></view>
+  </view>
+  <view class="itemKuang" bindtap="changeTab" data-index="1">
+  <view class="teamtitletext  {{index==1?'red':'grey'}}">我的队伍</view>
+  <view class="{{index==1?'teamxianred':''}}"></view>
+  </view>
+</view>
+  <view wx:if="{{index==0}}">
+    
+    <radio-group class="radio-group" bindchange="getClassification">
+      <radio value="1" checked="true"></radio><text class="cfttext">单位/企业</text>
+      <radio value="2"></radio><text class="cfttext">民间团体</text>
+    </radio-group>
+ 
+    <view class="inputkuang">
+      <view class="inputname">名称</view>
+      <input class="inputcontent" bindinput="inputName" placeholder-class="placeholder" placeholder="请输入公司/组织名称"/>
+    </view>
+
+    <view class="inputkuang">
+      <view class="inputname">地址</view>
+      <input class="inputcontent" bindinput="inputAddress" placeholder-class="placeholder" placeholder="请输入公司/组织地址"/>
+    </view>
+
+    <view class="inputkuang">
+      <view class="inputname">负责人姓名</view>
+      <input class="inputcontent" bindinput="inputLegal" placeholder-class="placeholder" placeholder="请输入公司法人/组织负责人的姓名"/>
+    </view>
+
+    <view class="inputkuang">
+      <view class="inputname">组织总人数</view>
+      <input class="inputcontent" bindinput="inputCard" type="number" placeholder-class="placeholder" placeholder="请输入公司/组织总人数"/>
+    </view>
+    <view class="inputkuang">
+      <view class="inputname">联系电话</view>
+      <input class="inputcontent" bindinput="inputPhone" type="number" placeholder-class="placeholder" placeholder="请输入您的联系电话"/>
+    </view>
+
+    <view class="inputkuang">
+      <view class="inputname">简介</view>
+    
+		<textarea class="texttareacontent"  bindinput="textareaAInput" placeholder="介绍"></textarea>
+
+    </view>
+
+    <view class="inputkuang">
+      <view class="inputname">营业执照</view>
+    </view>
+   <view class="imageKuang">
+     <block wx:for="{{imgData}}" wx:key="index">
+      <view class="flex margin-bottom-xs">
+        <image class="imgClass" src="{{item}}" mode="aspectFill"></image>
+        <view class="outImage" bindtap="deleteImg" data-index="{{index}}">X</view>
+      </view>
+     </block>
+     
+     <image wx:if="{{imgData.length<1}}" class="imgClass" src="../../../static/img/selectPhoto_add.png" bindtap="onLoadImg"></image>
+   </view>
+   <view class="inputkuang">
+      <view class="inputname">组织展示图片组</view>
+    </view>
+    <view class="imageKuang">
+     <block wx:for="{{teamImgData}}" wx:key="index">
+      <view class="flex margin-bottom-xs">
+        <image class="imgClass" src="{{item}}" mode="aspectFill"></image>
+        <view class="outImage" bindtap="deleteTeamImg" data-index="{{index}}">X</view>
+      </view>
+     </block>
+     
+     <image wx:if="{{teamImgData.length<3}}" class="imgClass" src="../../../static/img/selectPhoto_add.png" bindtap="teamOnLoadImg"></image>
+   </view>
+    <button class="button" bindtap="onCommit"> 提交审核</button>
+
+  </view>
+
+
+
+
+
+  <view wx:if="{{index==1}}">
+
+   <view class="itemMy" wx:if="{{myTeam}}">
+      <view class="one-row">
+        <view class="one-row-one">
+          <view class="two-name">公司名称: </view>
+          <view class="one-context">{{myTeam.name}}</view>
+        </view>
+        <view class="{{myTeam.auditStatus=='0'?'check':myTeam.auditStatus=='1'?'checkgreen':'checkred'}}">{{myTeam.auditStatus=="0"?"审核中":myTeam.auditStatus=="1"?"已过审":"未通过"}}</view>
+      </view>
+
+      <view class="tow-row">
+        <view class="two-name">公司地址:</view>
+        <view class="one-contexts" >{{myTeam.address}}</view>
+      </view>
+
+      <view class="three-row">
+        <view class="flex">
+          <view class="two-name">负责人:</view>
+          <view class="three-context">{{myTeam.principal}}</view>
+        </view>
+        <view class="three-show" bindtap="todetail" data-data="{{myTeam}}">查看详情</view>
+      </view>
+
+   </view>
+
+ 
+  </view>
+
+
+</scroll-view>
+
+<view class="cu-modal {{modalName == 'Modal' ? 'show' : ''}}" bindtap="hideModal">
+			<view class="cu-dialog">
+				<view class="modal-m">
+					<image class="modal-img" src="https://img.0728jh.com/staticImg/shibai_icon.png"></image>
+					<view class="modal-text">请填写正确信息哦</view>
+				</view>
+			</view>
+		</view>

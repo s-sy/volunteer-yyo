@@ -1,0 +1,50 @@
+<view class="chuangwen">
+  <view class="oneline">
+    <view class="flex">
+      <view class="title">{{taskData.topic}}</view>
+    
+    </view>
+   
+    <view class="title-fen">{{taskData.pointReward}}分/人</view>
+  </view>
+  <view class="flex">
+  <view class="title-top">{{taskTypeList[taskData.taskType]}}</view>
+</view>
+  <view class="twoline" style="margin-top:15rpx">
+      <view>要求人数：</view>
+      <view>{{taskData.numberNeeded}}人（已报名{{taskData.registered}}人）</view>
+  </view>
+  
+  <view class="twoline" style="margin-top:10rpx">
+    <view>开始时间：</view>
+    <view>{{startTime}}</view>
+  </view>
+  <view class="twoline" style="margin-top:10rpx">
+    <view>结束时间：</view>
+    <view>{{endTime}}</view>
+  </view>
+  <view class="twoline" style="margin-top:10rpx">
+    <view>任务地点：</view>
+    <view>{{taskData.address}}</view>
+  </view>
+
+  <view class="felxline" style="margin-top:20rpx">
+    <view class="felx-left">
+    <!-- <image class="chuangwen-img" src="/static/img/xiaohuang.jpg"></image> -->
+  
+    <view>{{taskData.contacts}}/{{taskData.phone}}</view>
+    </view>
+    <view wx:if="{{taskType=='index'&& !isNow}}" class="flex-xq" style="background: linear-gradient(-90deg, #FA3737 0%, #FF8A8B 100%);" bindtap="jumpRejDetail" data-data="{{taskData}}" >查看详情</view>
+    <view wx:if="{{taskType=='index'&& isNow}}" class="flex-xq" style="background: linear-gradient(-90deg, #FA3737 0%, #FF8A8B 100%);" bindtap="jumpRejDetail" data-data="{{taskData}}" >正在进行中</view>
+    <view wx:if="{{taskType=='user' && showBoutton=='now' && overdue !='1'}}" class="flex-xq" style="background: linear-gradient(-90deg, #FF552A 0%, #FF977D 98%);" bindtap="jumpDetail" data-type="now" data-data="{{taskData}}">立即打卡</view>
+    <view wx:if="{{taskType=='user' && showBoutton=='before' && overdue !='1'}}" class="flex-xq" style="background: #CECECE;" bindtap="jumpDetail" data-type="before" data-data="{{taskData}}">活动还未开始</view>
+    <view wx:if="{{taskType=='user' && showBoutton=='after' && overdue !='1'}}" class="flex-xq" style="background: linear-gradient(-90deg, #AF8F6D 0%, #D4BCA3 98%);" bindtap="jumpDetail" data-type="after" data-data="{{taskData}}">已过期</view>
+
+    <view wx:if="{{taskType=='user' && overdue=='1'}}" class="flex-xq" style="background: linear-gradient(-90deg, #3B99D5 0%, #92D2FA 100%);" bindtap="jumpDetail" data-type="now" data-data="{{taskData}}">已打卡</view>
+   
+
+    <view wx:if="{{taskType=='mylist' && myConformity==0}}" class="flex-xq" style="background: linear-gradient(-90deg, #3EC169 0%, #8EDEAA 99%);" bindtap="jumpDetail"   data-data="{{taskData}}">核实中</view>
+    <view wx:if="{{taskType=='mylist' && myConformity==1}}" class="flex-xq" style="background: linear-gradient(-90deg, #3B99D5 0%, #92D2FA 100%);" bindtap="jumpDetail"  data-data="{{taskData}}">合格</view>
+    <view wx:if="{{taskType=='mylist' && myConformity==2}}" class="flex-xq" style="background: linear-gradient(-90deg, #FE3A49 0%, #FAB4BA 100%);" bindtap="jumpDetail"  data-data="{{taskData}}">不合格</view>
+  </view>
+</view>

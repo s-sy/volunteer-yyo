@@ -1,0 +1,64 @@
+<!--
+  - Copyright (C) 2018-2019
+  - All rights reserved, Designed By www.aiforest.net
+  - 注意：
+  - 本软件为www.aiforest.net开发研制，未经购买不得使用
+  - 购买后可获得全部源代码（禁止转卖、分享、上传到码云、github等开源平台）
+  - 一经发现盗用、分享等行为，将追究法律责任，后果自负
+-->
+<wxs module="numberUtil" src="../../../utils/numberUtil.wxs"></wxs>
+<view class="bg-red">
+  <view class="seckill">
+    <scroll-view class="nav text-center" scroll-x scroll-with-animation scroll-left="{{scrollLeft}}">
+      <view class="cu-item navItem {{index==TabCur?'text-white':''}}" wx:for="{{seckillList}}" wx:key="index" bindtap="tabSelect" data-index="{{index}}">
+        <view class="text-sm">{{item.hallTime+':00'}}</view>
+        <view wx:if="{{index==TabCur}}" class="cu-tag bg-white sm round text-red text-sm">
+          {{curHour==item.hallTime?'正在疯抢':curHour>item.hallTime?'已结束':'即将开始'}}
+        </view>
+        <view wx:if="{{index!=TabCur}}" class="text-white text-xs">{{curHour==item.hallTime?'正在疯抢':curHour>item.hallTime?'已结束':'即将开始'}}</view>
+      </view>
+    </scroll-view>
+    <view class="cu-bar justify-center">
+      <view class="text-sm">
+        <text class="line margin-right-xs"></text>
+        <text wx:if="{{outTime>0}}">本场还剩:</text><count-down  wx:if="{{outTime>0}}" outTime="{{outTime}}" bind:countDownDone="countDownDone"></count-down><text wx:if="{{outTime>0}}">结束</text>
+        <text wx:if="{{outTime==0}}">本场已结束</text>
+        <text wx:if="{{outTime<0}}">本场暂未开始</text>
+        <text class="line margin-left-xs"></text>
+      </view>
+    </view>
+    <view class="article no-card">
+      <view class="goods-item margin-top padding-bottom" wx:for="{{listSeckillGoodsInfo}}" wx:key="index">
+        <view class="flex padding-xs padding-bottom align-center padding-top">
+          <image src="{{item.picUrl}}" mode="aspectFill" class="row-img margin-left-sm"></image>
+          <view class="margin-left-sm seckill-information">
+            <view class="text-black text-sm overflow-1 padding-right-sm">{{item.name}}</view>
+            <view class="flex justify-start margin-top-sm align-center">
+              <view class="cu-capsule round">
+                <view class='cu-tag bg-red text-sm'>秒杀价</view>
+                <view class="cu-tag line-red text-price text-bold text-df text-red padding-left-xs">{{item.seckillPrice}}</view>
+              </view>
+              <view class="text-price text-decorat text-gray margin-left-sm">{{item.goodsSku.salesPrice}}</view>
+            </view>
+            <view class=" regmen margin-top-sm padding-right">
+              <view class="text-sm text-gray ">限量 {{item.limitNum}} 件</view>
+              <view class="text-sm text-gray ">已售 {{item.seckillNum}} 件</view>
+              <view class="cu-progress round margin-top-sm progress-bar">
+                <view class="bg-red " style="width:{{numberUtil.numberFormat((item.seckillNum/item.limitNum)*100,2)+'%'}}">
+                  <text class="margin-left" style="color: #FFFFFF!important;">{{numberUtil.numberFormat((item.seckillNum/item.limitNum)*100,2)+'%'}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="flex justify-center margin-top-sm">
+          <navigator class="cu-btn round shadow-blur btn-enter bg-red" hover-class="none"
+                  url="/pages/seckill/seckill-detail/index?seckillHallInfoId={{item.seckillHallInfo.id}}">
+            {{curHour==curSeckillHall.hallTime?'马上去抢':'查看详情'}}
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class="cu-load bg-red {{loadmore?'loading':'over'}}"></view>
+  </view>
+</view>

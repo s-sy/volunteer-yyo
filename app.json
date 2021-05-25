@@ -1,0 +1,119 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/shop/index",
+    "pages/base/search/index",
+    "pages/goods/goods-category/index",
+    "pages/goods/goods-list/index",
+    "pages/goods/goods-detail/index",
+    "pages/shopping-cart/index",
+    "pages/order/order-confirm/index",
+    "pages/order/order-list/index",
+    "pages/order/order-detail/index",
+    "pages/order/order-logistics/index",
+    "pages/user/user-center/index",
+    "pages/user/user-address/list/index",
+    "pages/user/user-address/form/index",
+    "pages/user/user-collect/index",
+    "pages/appraises/form/index",
+    "pages/appraises/list/index",
+    "pages/order/order-refunds/form/index",
+    "pages/order/order-refunds/submit/index",
+    "pages/user/user-points-record/index",
+    "pages/coupon/coupon-user-list/index",
+    "pages/coupon/coupon-list/index",
+    "pages/bargain/bargain-list/index",
+    "pages/bargain/bargain-detail/index",
+    "pages/bargain/bargain-user-list/index",
+    "pages/bargain/bargain-order-confirm/index",
+    "pages/groupon/groupon-list/index",
+    "pages/groupon/groupon-detail/index",
+    "pages/groupon/groupon-user-list/index",
+    "pages/groupon/groupon-user-detail/index",
+    "pages/groupon/groupon-order-confirm/index",
+    "pages/live/room-list/index",
+    "pages/seckill/seckill-list/index",
+    "pages/seckill/seckill-detail/index",
+    "pages/seckill/seckill-order-confirm/index",
+    "pages/index/index",
+    "pages/delivery-point/index",
+    "pages/task/registration/index",
+    "pages/task/taskdetail/index",
+    "pages/task/punch-in/index",
+    "pages/task/user-task/index",
+    "pages/task/tasklist/index",
+    "pages/preach/preach-platform-list/index",
+    "pages/preach/preach-detail/index",
+    "pages/preach/preach-list/index",
+    "pages/trends/trends-detail/index",
+    "pages/trends/trends-list/index",
+    "pages/user/user-mine/index",
+    "pages/user/user-team/index",
+    "pages/user/user-team-detail/index",
+    "pages/user/user-task/index",
+    "pages/user/user-publish/index",
+    "pages/task/task-help-detail/index",
+    "pages/inventory/inventory-list/index",
+    "pages/inventory/apply-for-list/index",
+    "pages/verification/index",
+    "pages/user/user-honour/index",
+    "pages/user/user-honour-update/index",
+    "pages/user/user-honour-updateimg/index",
+    "pages/rank/index",
+    "pages/user/user-mytask-jion/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "yomi",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#282828",
+    "selectedColor": "#e93323",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "public/img/home_icon.png",
+        "selectedIconPath": "public/img/home1_icon.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shop/index",
+        "iconPath": "public/img/shop_icon.png",
+        "selectedIconPath": "public/img/shop2_icon.png",
+        "text": "爱心超市"
+      },
+      {
+        "pagePath": "pages/task/user-task/index",
+        "iconPath": "public/img/task_icon.png",
+        "selectedIconPath": "public/img/task3_icon.png",
+        "text": "任务打卡"
+      },
+      {
+        "pagePath": "pages/preach/preach-platform-list/index",
+        "iconPath": "public/img/preach_icon.png",
+        "selectedIconPath": "public/img/preach4_icon.png",
+        "text": "服务平台"
+      },
+      {
+        "pagePath": "pages/user/user-mine/index",
+        "iconPath": "public/img/my_icon.png",
+        "selectedIconPath": "public/img/my5_icon.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/public/colorui/components/cu-custom"
+  },
+  "plugins": {},
+  "permission": {
+    "scope.userLocation": {
+      "desc": "提货点分配将获取您的位置信息"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+/* pages/user/user-honour/index.wxss */
+page{
+  background: #ffffff;
+}
+.houourImg{
+  width: 686rpx;
+height: 280rpx;
+border-radius: 6rpx;
+}
+.houourtext{
+  padding: 30rpx 0rpx 50rpx 0rpx;
+font-size: 30rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #666666;
+
+}
+.miaoshu{
+  overflow: hidden;
+  max-width: 550rpx;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

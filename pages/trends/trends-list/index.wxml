@@ -1,0 +1,11 @@
+<!--pages/trends/trends-list/index.wxml-->
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">新闻动态</view>
+</cu-custom>
+
+<block wx:for="{{newstrends}}" wx:key="index">
+  <view class="margin-tb-sm">
+    <trends newstrends="{{item}}" bindtap="todetail" data-data="{{item}}"></trends>
+  </view>
+</block>

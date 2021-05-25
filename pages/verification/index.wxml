@@ -1,0 +1,114 @@
+<!--pages/verification/index.wxml-->
+<cu-custom bgColor="bg-gradual-orange" isBack="{{false}}">
+  <view slot="backText">返回</view>
+  <view slot="content">商品核销</view>
+</cu-custom>
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange '></text> {{depInfo.detailInfo}}
+  </view>
+</view>
+<view class="cu-card article margin-top">
+    <view class="cu-item">
+      <view class="cu-list menu">
+        <view wx:for="{{ orderInfo.listOrderItem }}" wx:key="index">
+          <navigator hover-class='none' url='/pages/goods/goods-detail/index?id={{item.spuId}}' class="cu-item">
+            <view class="flex align-center">
+              <view class="content response">
+                <image src="{{item.picUrl ? item.picUrl : '/public/img/no_pic.png'}}" mode="aspectFill" class="row-img margin-top-xs"></image>
+                <view class="desc row-info">
+                  <view class="text-black margin-top-sm overflow-2">
+                    {{item.spuName}}
+                  </view>
+                  <view class="text-gray text-sm margin-top-sm overflow-2" wx:if="{{item.specInfo}}">{{item.specInfo}}</view>
+                  <view class="flex justify-between">
+                    <view class="text-price text-bold text-red margin-top-sm padding-lr-sm">{{item.salesPrice}}</view>
+                    <view class="text-black text-sm margin-top-sm padding-lr-sm">x{{item.quantity}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </navigator>
+          <!-- <view class="cu-item text-right padding-sm">
+            <navigator class="cu-btn line sm" 
+              url='/pages/order/order-refunds/submit/index?orderItemId={{item.id}}'
+             wx:if="{{orderInfo.isPay == '1' && item.status == '0'}}">
+              申请售后
+            </navigator>
+            <navigator class="cu-btn line sm text-orange" 
+              url='/pages/order/order-refunds/form/index?orderItemId={{item.id}}'
+             wx:if="{{orderInfo.isPay == '1' && item.status != '0'}}">
+              {{item.statusDesc}}
+            </navigator>
+          </view> -->
+        </view>
+        <view class="cu-item">
+          <view class="content">
+            <text class="text-grey">订单金额</text>
+          </view>
+          <view class="action">
+            <text class="text-price">{{orderInfo.salesPrice}}</text>
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="content">
+            <text class="text-grey">运费</text>
+          </view>
+          <view class="action">
+            + <text class="text-price">{{orderInfo.freightPrice}}</text>
+          </view>
+        </view>
+        <view class="cu-item" wx:if="{{orderInfo.paymentCouponPrice}}">
+          <view class="content">
+            <text class="text-grey">优惠券抵扣金额</text>
+          </view>
+          <view class="action">
+            - <text class="text-price">{{orderInfo.paymentCouponPrice}}</text>
+          </view>
+        </view>
+        <view class="cu-item" wx:if="{{orderInfo.paymentPoints}}">
+          <view class="content">
+            <text class="text-grey">积分抵扣金额</text>
+          </view>
+          <view class="action">
+            - <text class="text-price">{{orderInfo.paymentPointsPrice}}</text>
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="content">
+            <text class="text-grey">支付金额</text>
+          </view>
+          <view class="action">
+            <text class="text-red text-bold" wx:if="{{orderInfo.orderType != '0'}}">
+              {{orderInfo.orderType == '1' ? '砍价后' : orderInfo.orderType == '2' ? '拼团价' : orderInfo.orderType == '3' ? '秒杀价' : ''}} 
+            </text>
+            <text class="text-price text-red text-bold">{{orderInfo.paymentPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="padding flex flex-direction">
+  <button class="cu-btn bg-red margin-tb-sm lg" bindtap="orderVerification">确认核销</button>
+</view>
+<view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">{{modalTitle}}</view>
+      <!-- <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view> -->
+    </view>
+    <view class="padding-xl">
+      <!-- 您的信息已经提交成功，请耐心等候审核通知。 -->
+      {{modalContent}}
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <!-- <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button> -->
+        <!-- <button class="cu-btn bg-green margin-left" bindtap="hideModal">返回首页</button> -->
+        <navigator url="/pages/home/index"  open-type="switchTab" hover-class="navigator-hover">返回首页</navigator>
+      </view>
+    </view>
+  </view>
+</view>

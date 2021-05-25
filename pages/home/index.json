@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "task-list":"/components/task-list/index",
+    "trends":"/components/trends/index",
+    "ranking":"/components/ranking/index",
+    "title-bar":"/components/title-bar/index"
+  }
+}

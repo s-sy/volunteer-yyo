@@ -1,0 +1,38 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view class="daohang" slot="backText">修改个人荣誉</view>	
+</cu-custom>
+<block wx:for="{{userList}}" wx:key="index">
+<view >
+  <view class="oneRow">
+    <view class="oneRowone">
+      <view class="onename">名称：</view>
+      <view class="onecontent">{{item.designation}}</view>
+    </view>
+   
+    <image style="width:30rpx;height:32rpx" src="../../../static/img/shanchu_icon@2x.png" bindtap="delethonour" data-id="{{item.id}}"></image>
+  </view>
+ <view class="towRow">
+   <view class="onename">图片：</view>
+   <view >
+     <image class="sanc" style="width:585rpx;height:238rpx" src="{{item.picUrls}}"></image>
+   </view>
+  
+ </view>
+ <view class="xian"></view>
+</view>
+</block>
+<view>
+  <view class="oneRowone" style="padding:0rpx 30rpx;">
+    <view class="onename">名称：</view>
+    <input class="inputclass" placeholder="请输入荣誉名称" bindinput="inputName"></input>
+    <image class="sanc" wx:if="{{imgData}}" style="width:30rpx;height:32rpx" src="../../../static/img/shanchu_icon@2x.png"></image>
+  </view>
+  <view class="towRow">
+    <view class="onename">图片：</view>
+    <image wx:if="{{imgData}}" style="width:585rpx;height:238rpx" src="{{imgData}}" bindtap="upload" alt="" />
+    <image wx:if="{{!imgData}}" style="width:585rpx;height:238rpx" src="../../../static/img/pic@2x.png" bindtap="upload" alt="" />
+  </view>
+</view>
+<view class="commit" bindtap="commit">
+  提交审核
+</view>

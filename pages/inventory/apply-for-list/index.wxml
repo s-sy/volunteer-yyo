@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">库存申请列表</view></cu-custom>
+<view class="cu-list menu-avatar card-menu margin-top sm-border">
+    <view class="cu-item margin-bottom" wx:for="{{applyForList}}" wx:key>
+      <view class="cu-avatar radius lg" style="background-image:url({{item.sourcing.goodsSpu.picUrls[0]}});"></view>
+      <view class="content">
+        <view class="text-pink">
+          <text class="text-cut">{{item.sourcing.goodsSpu.name}}</text>
+          <text class="text-gray text-xxs">申请数量：{{item.applicationQuantity}}</text>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">{{item.skuName}}<text class="text-gray text-xxs"> {{item.createTime}}</text></text>
+        </view>
+      </view>
+      <view class="action">
+        <view class="cu-tag round bg-blue" wx:if="{{item.auditStatus === '0' || item.auditStatus == ''}}">审核中</view>
+        <view class="cu-tag bg-white" wx:if="{{item.auditStatus ==='1'}}">已发放</view>
+        <view class="cu-tag round bg-green sm" wx:if="{{item.auditStatus === '1'}}">{{item.approvedQuantity}}</view>
+        <view class="cu-tag bg-red" wx:if="{{item.auditStatus ==='2'}}">未通过</view>
+      </view>
+    </view>
+   
+  </view>

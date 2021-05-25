@@ -1,0 +1,9 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">我的任务</view>
+</cu-custom>
+<block wx:for="{{deliveryPoints}}" wx:key="index">
+  <view class="margin-tb-sm showdown">
+    <task-list taskType="mylist" taskData="{{item.assignment}}" myConformity="{{item.conformity}}"></task-list>
+  </view>
+</block>

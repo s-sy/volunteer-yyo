@@ -1,0 +1,189 @@
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <view class="flex padding align-center margin-top-xl">
+      <!-- " -->
+      <view class="cu-avatar round xl" wx:if="{{!wxUser.headimgUrl}}">{{!wxUser.headimgUrl ? '头' : ''}}</view>
+      <view class="cu-avatar round xl" wx:else style="background-image:url({{wxUser.headimgUrl}})" >{{!wxUser.headimgUrl ? '头' : ''}}</view>
+      <view class="padding">
+        <view class="grid col-1 text-white text-lg" wx:if="{{wxUser.nickName}}">{{wxUser.nickName}}</view>
+        <button class="cu-btn round sm line-white" open-type="getUserInfo" bind:getuserinfo="agreeGetUser" lang="zh_CN">
+      {{!wxUser.nickName ? '授权登陆' : '更新昵称'}}
+      </button>
+        <view class="grid col-1 text-center text-white text-sm" >天门志愿者协会（幺米社区）欢迎您！</view>
+      </view>
+    </view>
+    <view class="padding-xs flex text-center text-grey">
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xl text-white">{{userIntegration.registrationCount}}</view>
+      <view class="margin-top-sm text-white text-sm">
+        <text class="cuIcon-selectionfill"></text> 报名任务</view>
+    </view>
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xl text-white">{{userIntegration.involvedCount}}</view>
+      <view class="margin-top-sm text-white text-sm">
+        <text class="cuIcon-selection"></text> 参与任务</view>
+    </view>
+    <view class="flex flex-sub flex-direction">
+      <view class="text-xl text-white">{{userIntegration.pointsTotal}}</view>
+      <view class="margin-top-sm  text-white text-sm">
+        <text class="cuIcon-medalfill"></text> 总积分</view>
+    </view>
+    <view class="flex flex-sub flex-direction">
+      <view class="text-xl text-white">{{userIntegration.pointsCurrent}}</view>
+      <view class="margin-top-sm text-white text-sm">
+        <text class="cuIcon-medal"></text> 可用积分</view>
+    </view>
+  </view>
+    <!-- <view class="padding-lr-xl margin-top-sm">
+    <view class="cu-list grid transparent col-4 text-center no-border">
+      <view class="cu-item">
+        <view class="text-white text-lg">
+          10
+        </view>
+        <view class="text-white text-sm margin-top-sm">报名任务</view>
+      </view>
+      <view class="cu-item">
+        <view class="text-white text-lg">
+          10
+        </view>
+        <view class="text-white text-sm margin-top-sm">参与任务</view>
+      </view>
+      <view class="cu-item">
+        <view class="text-white text-lg">
+          10
+        </view>
+        <view class="text-white text-sm margin-top-sm">总共积分</view>
+      </view>
+      <view class="cu-item">
+        <view class="text-white text-lg">
+          10
+        </view>
+        <view class="text-white text-sm margin-top-sm">可用积分</view>
+      </view>
+    </view> -->
+  <!-- </view> -->
+    <!-- <view class="cu-list menu-avatar">
+    <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">爱心天使 凯尔</view>
+          <view class="text-white text-sm flex justify-between">
+            天门志愿者协会（幺米社区）欢迎您！
+          </view>
+        </view>
+      </view>
+    </view> -->
+    
+  </view>
+  <view class="cu-list menu card-menu margin-top-m margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/user/user-task-punch/index" hover-class="none">
+      <view class="content">
+        <image src="/static/img/renwu_icon@2x.png" class="png" style="width:30rpx;height:30rpx;margin-top:-10rpx;" mode="aspectFit"></image>
+        <text class="text-grey">我的任务</text>
+      </view>
+    </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/user/user-points-record/index" hover-class="none">
+        <image src="/static/img/jifen_icon@2x.png" class="png " style="width:30rpx;height:30rpx;margin-top:-10rpx;" mode="aspectFit"></image>
+        <text class="text-grey">积分明细</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/task/task-help/index" hover-class="none">
+        <!-- <text class="cuIcon-formfill text-green"></text> -->
+        <image src="/static/img/bangzhu_icon@2x.png" class="png " style="width:30rpx;height:30rpx;margin-top:-10rpx;" mode="aspectFit"></image>
+        <text class="text-grey">寻求帮助</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content" bindtap="toTeam">
+        <image src="/static/img/chuangjian_icon@2x.png" style="width:30rpx;height:30rpx;margin-top:-10rpx;" class="png" mode="aspectFit"></image>
+        <!-- <text class="cuIcon-appreciatefill text-red"></text> -->
+        <text class="text-grey">创建爱心队伍</text>
+      </view>
+    </view>
+    <!--  -->
+    <view class="cu-item arrow" wx:if="{{userIntegration.isPublisher == '1'}}">
+      <navigator class="content" url="/pages/user/user-publish/index" hover-class="none">
+      <button class="cu-btn content" >
+        <!-- <text class="cuIcon-writefill text-cyan"></text> -->
+        <image src="/static/img/fabu_icon@2x.png" style="width:30rpx;height:30rpx;margin-top:-10rpx;" class="png" mode="aspectFit"></image>
+        <text class="text-grey">任务发布</text>
+      </button>
+    </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/user/user-honour/index" hover-class="none">
+        <image src="/static/img/hexiao_icon@2x.png" style="width:30rpx;height:30rpx;margin-top:-10rpx;" class="png" mode="aspectFit"></image>
+        <text class="text-grey">个人荣誉</text>
+      </navigator>
+    </view>
+    <!-- <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/test/list" hover-class="none">
+        <image src="/static/img/hexiao_icon@2x.png" style="width:30rpx;height:30rpx;margin-top:-10rpx;" class="png" mode="aspectFit"></image>
+        <text class="text-grey">爱心商品核销</text>
+      </navigator>
+    </view> -->
+    <view class="cu-item arrow" wx:if="{{userIntegration.isDeliveryPoint == '1'}}">
+      <navigator class="content" url="/pages/inventory/inventory-list/index" hover-class="none">
+        <image src="/static/img/hexiao_icon@2x.png" style="width:30rpx;height:30rpx;margin-top:-10rpx;" class="png" mode="aspectFit"></image>
+        <text class="text-grey">库存管理</text>
+      </navigator>
+    </view>
+  </view>
+  <!-- <view class="cu-tabbar-height"></view> -->
+  <view class="cu-list menu card-menu margin-top-sm radius">
+    <view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-titles text-red"></text>爱心订单
+    </view>
+    <navigator class="action" url="/pages/order/order-list/index" hover-class="none">
+      全部订单<text class="cuIcon-right"></text>
+    </navigator>
+    </view>
+    <view class="cu-list grid col-4 no-border">
+    <view class="cu-item">
+      <navigator url="/pages/order/order-list/index?status=0" hover-class="none">
+        <view class="cuIcon-pay text-red">
+          <view wx:if="{{orderCountAll[0]>0}}" class="cu-tag badge">{{orderCountAll[0]}}</view>
+        </view>
+        <text>待付款</text>
+      </navigator>
+    </view>
+    <view class="cu-item">
+      <navigator url="/pages/order/order-list/index?status=1" hover-class="none">
+        <view class="cuIcon-send text-red">
+          <view wx:if="{{orderCountAll[1]>0}}" class="cu-tag badge">{{orderCountAll[1]}}</view>
+        </view>
+        <text>待发货</text>
+      </navigator>
+    </view>
+    <view class="cu-item">
+      <navigator url="/pages/order/order-list/index?status=2" hover-class="none">
+        <view class="cuIcon-deliver text-red">
+          <view wx:if="{{orderCountAll[2]>0}}" class="cu-tag badge">{{orderCountAll[2]}}</view>
+        </view>
+        <text>待收货</text>
+      </navigator>
+    </view>
+    <view class="cu-item">
+      <navigator url="/pages/order/order-list/index?status=8" hover-class="none">
+        <view class="cuIcon-goodsfavor text-red">
+          <view wx:if="{{orderCountAll[8]>0}}" class="cu-tag badge">{{orderCountAll[8]}}</view>
+        </view>
+        <text>待自提</text>
+      </navigator>
+    </view>
+    <!-- <view class="cu-item">
+      <navigator url="/pages/order/order-list/index?status=4" hover-class="none">
+        <view class="cuIcon-evaluate text-red">
+          <view wx:if="{{orderCountAll[3]>0}}" class="cu-tag badge">{{orderCountAll[3]}}</view>
+        </view>
+        <text>待评价</text>
+      </navigator>
+    </view> -->
+    </view>
+  </view>
+</scroll-view>

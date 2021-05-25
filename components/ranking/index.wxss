@@ -1,0 +1,83 @@
+/* components/user/home.wxss */
+.user{
+width:686rpx;
+background: #FFFFFF;
+box-shadow: 0rpx 0rpx 22rpx 5rpx rgba(198, 198, 198, 0.2);
+border-radius: 6rpx;
+margin-left: 30rpx;
+padding: 60rpx 27rpx 20rpx 29rpx;
+}
+.itemuser{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50rpx;
+}
+.item-left-top{
+  display: flex;
+  align-items: center;
+}
+.item-left{
+  width:48rpx;
+  height: 39rpx;
+  margin-right: 20rpx;
+}
+.item-number{
+  text-align: center;
+  width:48rpx;
+  height: 39rpx;
+}
+.user-img{
+width: 88rpx;
+height: 88rpx;
+border-radius: 50%;
+margin-right: 23rpx;
+}
+.user-name{
+  
+font-size: 30rpx;
+font-family: PingFang SC;
+font-weight: 500;
+color: #333333;
+}
+.user-tag{
+  display: flex;
+  margin-top:5rpx;
+}
+.tag-one{
+padding:0rpx 5rpx;
+font-size: 22rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #F8977A;
+line-height: 36rpx;
+opacity: 0.8;
+
+background: #FFF2EE;
+
+border-radius: 2rpx;
+}
+.tag-two{
+padding:0rpx 5rpx;
+margin-left: 18rpx;
+font-size: 22rpx;
+font-family: PingFang SC;
+font-weight: 400;
+color: #FABD57;
+line-height: 36rpx; 
+background: #FFF9EF;
+border-radius: 2rpx;
+}
+.user-jif{
+
+font-size: 42rpx;
+font-family: DIN Alternate;
+font-weight: bold;
+color: #333333;
+line-height: 36rpx;
+}
+.user-jifeng{
+
+  font-size: 24rpx;
+  color: #999999;
+}

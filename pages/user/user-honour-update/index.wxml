@@ -1,0 +1,32 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view class="daohang" slot="backText">修改个人资料</view>	
+</cu-custom>
+<form>
+  <view class="cu-form-group ">
+		<view class="title">姓名</view>
+		<input placeholder="输入姓名" bindinput="inputName" value="{{name}}"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">出生年月</view>
+		<picker mode="date" value="{{date}}" start="1950-09-01" end="2030-09-01" bindchange="DateChange">
+			<view class="picker">
+				{{date=='2010'?'选择':date}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">工作单位</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}" range-key="name">
+			<view class="picker">
+				{{index==-1?'选择':picker[index].name}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group align-start">
+		<view class="title">个人描述</view>
+		<textarea maxlength="-1" value="{{textarea}}"  bindinput="textareaBInput" placeholder="多行文本输入框"></textarea>
+  </view>
+  
+  <view class="commit" bindtap="commit">修改</view>
+  
+</form>

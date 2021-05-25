@@ -1,0 +1,38 @@
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='cuIcon-back'></text> 返回
+    </navigator>
+   
+  </view>
+</view>
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <!-- <image src="/static/img/user_task@2x.png" class="png" mode="widthFix"></image> -->
+    <!-- <view class="text-xl">ColorUI组件库
+      <text class="text-df">v2.0</text>
+    </view> -->
+    <view class="text-xl text-hold text-white">天门市新时代文明实践中心服务平台</view>
+    <view class="text-xl text-hold text-white">{{query}}</view>
+  </view>
+
+
+  <block wx:for="{{dataList}}" wx:key="index">
+    <view class="bg-white  preach-list-view padding-lg" >
+   <view class="">
+     <view class="flex align-center ">
+       <view class="one">{{index+1}}</view>
+       <view class="one-text">【{{item.civilizationTitle}}】</view>
+     </view>
+     <view class="xian"></view>
+   <preach-list-form itemObj="{{item}}"></preach-list-form>
+     <view class="flex justify-center margin-top-lg">
+       <!-- <view>我要点单</view> -->
+       <button class="cu-btn bg-blue" bindtap="onClickT" data-text="order" data-index="{{index}}">邀请</button>
+       <button class="cu-btn margin-left-lg  bg-green" bindtap="onClickT" data-text="comment" data-index="{{index}}">服务评论</button>
+       <!-- <view>我要评单</view> -->
+     </view>
+   </view>
+  </view>
+    </block>
+</scroll-view>

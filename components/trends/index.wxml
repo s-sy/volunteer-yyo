@@ -1,0 +1,9 @@
+<!--components/newdynamic/home.wxml-->
+<view class="dynamic">
+  <image class="dynamic-img" src="{{newstrends.thumbnail}}" mode="aspectFill"></image>
+  <view class="dynamic-right">
+    <view class="dynamic-tilte">{{newstrends.title}}</view>
+    <view class="dynamic-content">{{newstrends.details}}</view>
+    <view class="dynamic-time">{{newstrends.createTime}}</view>
+  </view>
+</view>

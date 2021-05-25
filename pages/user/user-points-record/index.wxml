@@ -1,0 +1,34 @@
+<!--
+  - Copyright (C) 2018-2019
+  - All rights reserved, Designed By www.aiforest.net
+  - 注意：
+  - 本软件为www.aiforest.net开发研制，未经购买不得使用
+  - 购买后可获得全部源代码（禁止转卖、分享、上传到码云、github等开源平台）
+  - 一经发现盗用、分享等行为，将追究法律责任，后果自负
+-->
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">积分明细</view></cu-custom>
+<view class="bg-gradual-orange text-center padding">
+  <view class="text-xl">
+    <text class="cuIcon-medalfill">当前{{userInfo.pointsCurrent}}个积分</text>
+  </view>
+  <view class="margin-top-sm">
+    <text>用户积分明细</text>
+  </view>
+</view>
+<view class="cu-list menu">
+  <view class="cu-item" wx:for="{{pointsRecord}}" wx:key="index">
+    <view class="content padding-tb-sm">
+      <view>
+        {{item.description}}
+      </view>
+      <view class="text-gray text-sm">
+        {{item.createTime}}
+      </view>
+    </view>
+    <view class="action">
+      <text class="text-bold text-green margin-right-xs" wx:if="{{item.amount > 0}}">+{{item.amount}}</text>
+      <text class="text-bold text-red margin-right-xs" wx:if="{{item.amount < 0}}">{{item.amount}}</text>
+    </view>
+  </view>
+</view>
+<view class="cu-load bg-gray {{loadmore?'loading':'over'}}"></view>

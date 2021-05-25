@@ -1,0 +1,53 @@
+.navItem{
+  line-height: 30rpx!important;
+  margin: 10rpx!important;
+  padding: 20rpx!important;
+}
+.row-img {
+  width: 200rpx !important;
+  height: 200rpx !important;
+  border-radius: 10rpx;
+}
+
+.seckill{
+  min-height: 1450rpx;
+}
+
+.line{
+  display:inline-block;
+  width:120rpx;
+  border-top:0.5rpx solid #cccccc;
+  vertical-align:5px;
+  opacity: 0.5;
+}
+
+.goods-item{
+  background-color: #FFFFFF;
+  width: 94%;
+  margin: auto;
+  border-radius: 10rpx;
+  margin-bottom: 40rpx;
+}
+
+.seckill-information{
+  width: 460rpx;
+}
+
+.seckill-image{
+  width: 100%;
+  height: 420rpx;
+  margin-top: -120rpx;
+}
+
+.progress-bar{
+  height: 16rpx;
+}
+
+.percentage{
+  color: #ffbbbb!important;
+}
+
+.btn-enter{
+  width: 580rpx;
+  height: 76rpx;
+}
