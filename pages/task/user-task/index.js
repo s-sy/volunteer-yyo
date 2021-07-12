@@ -20,6 +20,7 @@ Page({
   },
   getPersonalList(){
     let that=this;
+    console.log(app.globalData.wxUser)
     app.api.listRegistrationByPersonal({
       enrolledId: app.globalData.wxUser.mallUserId,
       attendFlag: '0'
@@ -42,6 +43,7 @@ Page({
    */
   onShow: function () {
    // this.loadData()
+   console.log("任务打卡Onshow")
    app.initPage()
       .then(res => {
         this.loadData()

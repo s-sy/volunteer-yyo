@@ -74,9 +74,9 @@ Page({
   },
   getwxUserGet(){
     let that=this;
-    app.api.userInfoGet().then((res)=>{
-      // console.log("+++++++++++++++++++++++++++++++++++++")
-      // console.log(res)
+    app.api.wxUserGet().then((res)=>{
+      console.log("+++++++++++++++++++++++++++++++++++++")
+      console.log(res)
       if(res.ok){
         getApp().globalData.wxUser=res.data
         that.setData({

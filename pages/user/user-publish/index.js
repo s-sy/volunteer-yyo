@@ -194,6 +194,14 @@ Page({
       }
       
   }
+  if(!getApp().globalData.wxUser.mallUserId){
+    wx.showToast({
+      title: '发布人信息缺失，联系管理员',
+      duration:1000,
+      icon:'none'
+    })
+    return;
+  }
     let data={
       publisherId:getApp().globalData.wxUser.mallUserId,
       topic:this.data.name,

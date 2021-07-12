@@ -18,6 +18,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    console.log(options)
       if(options.obj){
         this.setData({
           obj:JSON.parse(options.obj)
